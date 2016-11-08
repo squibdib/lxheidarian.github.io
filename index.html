@@ -1,0 +1,249 @@
+<!doctype html><!--Doctype decleration-->
+<html>
+    <head>
+        <title>Clear Sense Design</title>
+        <meta charset = "utf-8"/>
+        <link rel = "stylesheet" href = "week1style.css"/><!--Retreiving CSS file-->
+        <meta name = "viewport" content = "width=device-width"/><!--meta tag for responsive design-->
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'/><!--retreiving Raleway font
+        from Google fonts-->
+    </head>
+    <body>
+      <div class = "container"><!--container class to properly align page-->
+          <h1>CL<span style = "color: #5ba9d9">E</span>AR S<span style = "color: #5ba9d9">E</span>NSE</h1><!--custom title-->
+          <h2 id = "subtitle">design</h2>
+          <div class = "menuIcon" onclick = "navDisplay(this);"><!--menu icon for mobile devices-->
+            <!--Bars for mobile menu icon-->
+            <div class = "bar1"></div>
+            <div class = "bar2"></div>
+            <div class = "bar3"></div>
+            <!--end of bars-->
+            <span class = "menuLabel">Menu</span>
+          </div>
+          <nav><!--navigation-using JavaScript to toggle display of pages-->
+              <div class = "menu" onclick = "disp('home');">Home</div>
+              <div class = "menu" onclick = "disp('p2');">Services</div>
+              <div class = "menu" onclick = "disp('p3');">Portfolio</div>
+              <div class = "menu"  onclick = "disp('p4');">About Me</div>
+              <div class = "menu" onclick = "disp('p5');">Contact</div>
+
+
+
+          </nav>
+          <div class = "content" id = "pg1">
+             <h2>Why hello there</h2>
+              <a id = "home"><p> My name is Alex, and I am a practicing Web/UI/UX designer.<br />
+              In the meantime, I tutor mathematics to frightend souls at UC Davis, and in my free time like to dabble in graphic design.</p></a><br/>
+          </div>
+          <div class = "content" id = "pg2">
+              <a id = "p2">This is the content for the PROJECT 2 page.</a><br/>
+          </div>
+          <div class = "content" id = "pg3">
+              <a id = "p3">This is the content for the PROJECT 3 page.</a><br/>
+          </div>
+          <div class = "content" id = "pg4">
+              <a id = "p4">This is the content for the PROJECT 4 page.</a><br/>
+          </div>
+          <div class = "content" id = "pg5">
+              <a id = "p5">This is the content for the PROJECT 5 page.</a><br/>
+          </div>
+          <div class = "content" id = "pg6">
+              <a id = "p6">This is the content for the PROJECT 6 page.</a><br/>
+          </div>
+          <div class = "content" id = "pg8">
+              <a id = "final">This is the content for the FINAL PROJECT page.</a><br/>
+          </div>
+
+
+           <footer>&copy;2016 Created by Alexander Heidarian</footer><!--Footer content-->
+        </div>
+
+        <!--JavaScript code for creating the single-page effect-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type = "text/javascript">
+            /*function page(tab) {
+                var pgraph = document.getElementById(tab);
+                if (tab == "home") {
+                    document.getElementById("desc").innerHTML = "<br> This is the content for the HOME page.";
+                }else if(tab == "uses") {
+                    document.getElementById("desc").innerHTML = "<br> This is the content for the USES page.";
+                }else if(tab == "history") {
+                    document.getElementById("desc").innerHTML = "<br> This is the content for the HISTORY page.";
+                }
+            }*/     //By default, load the homepage content and hide everything else
+                    document.getElementById("pg1").style.display = "inherit";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "none";
+            function disp(tab) {//function to toggle page content based on navigation selection
+                 /*
+                 if(tab == 'home') {
+                    document.getElementById("pg1").style.display = "inherit";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "none";
+
+                }
+                else if(tab == 'p2') {
+                    document.getElementById("pg2").style.display = "inherit";
+                    document.getElementById("pg1").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "none";
+
+                }
+                else if(tab == 'p3') {
+                    document.getElementById("pg3").style.display = "inherit";
+                    document.getElementById("pg1").style.display = "none";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "none";
+
+                }
+                else if(tab == 'p4') {
+                    document.getElementById("pg4").style.display = "inherit";
+                    document.getElementById("pg1").style.display = "none";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "none";
+
+                }
+                else if(tab == 'p5') {
+                    document.getElementById("pg5").style.display = "inherit";
+                    document.getElementById("pg1").style.display = "none";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "none";
+
+                }
+                else if(tab == 'p6') {
+                    document.write("<h3>TESTING</h3>");
+                    document.getElementById("pg1").style.display = "none";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "inherit";
+                    document.getElementById("pg8").style.display = "none";
+
+                }
+                else if(tab == 'final') {
+
+                    document.getElementById("pg1").style.display = "none";
+                    document.getElementById("pg2").style.display = "none";
+                    document.getElementById("pg3").style.display = "none";
+                    document.getElementById("pg4").style.display = "none";
+                    document.getElementById("pg5").style.display = "none";
+                    document.getElementById("pg6").style.display = "none";
+                    document.getElementById("pg8").style.display = "inherit";
+
+                }
+                */
+                switch(tab) {//switch statement for site-home for homepage, p1-p6 for projects 1-6, and final for final project
+                  case 'home':
+                  document.getElementById("pg1").style.display = "inherit";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                  break;
+                  case 'p2':
+                  document.getElementById("pg2").style.display = "inherit";
+                  document.getElementById("pg1").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                  break;
+                  case 'p3':
+                  document.getElementById("pg3").style.display = "inherit";
+                  document.getElementById("pg1").style.display = "none";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                  break;
+                  case 'p4':
+                  document.getElementById("pg4").style.display = "inherit";
+                  document.getElementById("pg1").style.display = "none";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                  break;
+                  case 'p5':
+                  document.getElementById("pg5").style.display = "inherit";
+                  document.getElementById("pg1").style.display = "none";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                  break;
+
+                  case 'p6':
+                  document.getElementById("pg6").style.display = "inherit";
+                  document.getElementById("pg1").style.display = "none";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                  break;
+                  case 'final':
+                  document.getElementById("pg8").style.display = "inherit";
+                  document.getElementById("pg1").style.display = "none";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  break;
+
+                  default:
+                  document.getElementById("pg1").style.display = "inherit";
+                  document.getElementById("pg2").style.display = "none";
+                  document.getElementById("pg3").style.display = "none";
+                  document.getElementById("pg4").style.display = "none";
+                  document.getElementById("pg5").style.display = "none";
+                  document.getElementById("pg6").style.display = "none";
+                  document.getElementById("pg8").style.display = "none";
+                }
+
+            }
+
+            function navDisplay(x) {//jQuery code for mobile navigation.
+    x.classList.toggle("change");
+}
+            $(document).ready(function() {
+
+
+                $('.menuIcon').on('click', function() {
+                    if($(window).width() <= 800) {
+                     $('nav').slideToggle();
+                }
+                });
+
+            });
+        </script>
+    </body>
+</html>
